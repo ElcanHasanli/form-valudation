@@ -1,0 +1,26 @@
+@media only screen and (max-width:375px) {
+    .united{
+        display: none;
+    }
+    
+    .nav-menu{
+        width: 210px;
+    }
+    .design{
+        display: none;
+    }
+    .name-main{
+      
+        flex-direction: column;
+    }
+    .sign-up{
+        width: 310px;
+    }
+    
+    .sign-down{
+        flex-direction: column;
+        float: inline-end;
+        padding-left: 171px;
+    }
+
+}

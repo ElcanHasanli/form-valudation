@@ -1,0 +1,5 @@
+@media only screen and (max-width:834px) {
+    .recent-logins{
+        display: none;
+    }
+}

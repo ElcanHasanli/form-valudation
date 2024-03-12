@@ -1,0 +1,29 @@
+@media only screen and (max-width:375px) {
+    .recent-logins{
+        display: none;
+    }
+    .login{
+        width: 270px;
+    }
+    input[type=email]{
+        width: 200px;
+    }
+    input[type=password]{
+        width: 200px;
+    }
+    input[type=submit]{
+        width: 200px;
+    }
+    .create-tag{
+        width: 200px;
+    }
+    footer{
+        width: 90%;
+        margin: 10px auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .phone{
+        display: none;
+    }
+}

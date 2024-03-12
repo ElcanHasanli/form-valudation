@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login/login.css"> 
+    <link rel="stylesheet" href="login/log-tablet.css">
+    <link rel="stylesheet" href="login/log-phone.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Start section -->
+    <section>
+        <div class="log-section">
+            <div class="recent-logins">
+                <div class="first-recent">
+                    <span></span>
+                    <h1>Recent logins</h1>
+                    <p>Click your picture or add an account</p>
+                </div>
+                <div class="info">
+                    <div class="firstperson">
+                        <div class="img">
+                            <img src="img/8bd4603b399b3038bdd3a8155118ea0f.png" alt="">
+                            <div class="mika">
+                                Mika Lee
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="firstperson">
+                        <div class="add-main">
+                            <div class="account">
+                                <span class="i-span"> <i class='bx bx-plus'></i></span>
+                            </div>
+                            <div class="add">
+                                Add an account
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="login-main">
+                <div class="login">
+                    <div class="email">
+                        <p>Your email</p>
+                        <form action="">
+                            <input type="email" name="" id="email">
+                    </div>
+                    <div class="password">
+                        <p>Your password</p>
+                        <input type="password" name="" id="password">
+                    </div>
+                    <input type="submit" name="" id="" value="Log in">
+                    <a href="" class="forget">Forget your password?</a>
+                    </form>
+                </div>
+                <div class="create-tag">
+                    <a href="" class="create">Create an account</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End section -->
+    <!-- Start footer -->
+
+    <span class="line"></span>
+
+    <footer>
+        <div class="footer-menu">
+
+            <a  href="http://127.0.0.1:5500/index.html">Sign up</a>
+            <a>Log in</a>
+            <a class="phone">Help Center</a>
+            <a class="phone">Terms of Service</a>
+            <a class="phone">Privacy Policy</a>
+            <a class="phone">About</a>
+            <a class="phone">Settings</a>
+
+        </div>
+        <div class="language">
+            <p>English(united States)</p>
+        </div>
+    </footer>
+
+
+    <!-- End footer -->
+    <!-- <script src="scripts/signinmanager.js"></script>
+    <script>
+        const signinmanager = new Signinmanager();
+        const loginResult = signinmanager.checkLogin();
+        if (loginResult == false) {
+            window.location.href = "log.html"
+
+        }
+
+    </script> -->
+    <script src="scripts/database.js"></script>
+    <script src="scripts/user.js"></script>
+    <script>
+        const database = new dataBase()
+        const loginButton = document.querySelector("button");
+        loginButton.addEventListener("click", function () {
+            const email = document.querySelector("#email").value;
+            const password = document.querySelector("#password").value;
+            const user = database.getUserByEmail(email);
+            if (user == null || user == undefined) {
+                alert("Username or password is not correct!")
+                return;
+                if (user.password != password) {
+                    alert("Username or password is not correct!")
+                    return;
+                }
+                alert("Success");
+                localStorage.loggedUser = JSON.stringify(user);
+                window.location.href = "index.html";
+            }
+        })
+
+    </script>
+</body>
+
+</html>
